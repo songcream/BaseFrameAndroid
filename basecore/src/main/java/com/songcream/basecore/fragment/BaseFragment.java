@@ -46,11 +46,11 @@ public abstract class BaseFragment<T extends BaseFragmentPresenter> extends RxFr
         }
     }
 
-    abstract void initView(View view);
+    public abstract void initView(View view);
 
-    abstract Integer getEmptyAttachViewId();
+    public abstract Integer getEmptyAttachViewId();
 
-    abstract int getLayouId();
+    public abstract int getLayouId();
 
     @Override
     public void showLoading() {

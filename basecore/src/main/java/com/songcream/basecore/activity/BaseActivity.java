@@ -54,12 +54,12 @@ public abstract class BaseActivity<T extends BaseActivityPresenter> extends RxAp
      * 在需要显示加载布局的地方调用emptyView.showEmptyLoading();
      * 隐藏空布局调用emptyView.hideEmptyView().
      */
-    abstract Integer getEmptyAttachViewId();
+    public abstract Integer getEmptyAttachViewId();
 
     /**
      * 返回当前Activity的布局ID
      */
-    abstract int getLayouId();
+    public abstract int getLayouId();
 
     @Override
     public void showLoading() {
