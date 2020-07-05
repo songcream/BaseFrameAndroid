@@ -14,12 +14,12 @@ import androidx.annotation.Nullable;
 
 public class ExampleActivity extends BaseActivity<ExamplePresenter> implements IExampleView {
     @Override
-    Integer getEmptyAttachViewId() {
+    public Integer getEmptyAttachViewId() {
         return R.id.title_bar;
     }
 
     @Override
-    int getLayouId() {
+    public int getLayouId() {
         emptyView.hideEmptyView();
         return R.layout.layout_example;
     }
