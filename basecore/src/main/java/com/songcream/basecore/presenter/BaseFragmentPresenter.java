@@ -14,7 +14,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class BaseFragmentPresenter<T extends IBaseView> {
     private BaseFragment baseFragment;
-    private T mView;
+    public T mView;
 
     public BaseFragmentPresenter(BaseFragment baseFragment,T mView) {
         this.baseFragment = baseFragment;
