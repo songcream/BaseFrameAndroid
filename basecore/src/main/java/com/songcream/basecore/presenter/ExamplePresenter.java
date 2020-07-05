@@ -16,17 +16,21 @@ public class ExamplePresenter extends BaseActivityPresenter<IExampleView> {
         super(baseActivity, mView);
     }
 
+    //实现调用网络获取数据，并且回调界面逻辑
     public void getData(BaseRequestBean baseRequestBean){
+        mView.showLoading();
         HttpManager.getRetrofitService().getData(baseRequestBean)
                 .compose(this.<BaseResponseBean<List<DataBean>>>baseTranformer())
                 .subscribe(new RxObserver<List<DataBean>>() {
                     @Override
                     public void onSuccess(List<DataBean> data) {
+                        mView.hideLoading();
                         mView.getData(data);
                     }
 
                     @Override
                     public void onFail(Throwable e, String errorMsg) {
+                        mView.hideLoading();
                         mView.showErrorView(errorMsg);
                     }
                 });

@@ -47,8 +47,18 @@ public abstract class BaseActivity<T extends BaseActivityPresenter> extends RxAp
         }
     }
 
+    /**
+     * 项目可以很方便的实现空布局和加载布局
+     * 只需要在这个方法返回需要实现空布局和加载布局的view的id即可。
+     * 在activity、presenter需要显示空布局的地方调用emptyView.showEmptyView();
+     * 在需要显示加载布局的地方调用emptyView.showEmptyLoading();
+     * 隐藏空布局调用emptyView.hideEmptyView().
+     */
     abstract Integer getEmptyAttachViewId();
 
+    /**
+     * 返回当前Activity的布局ID
+     */
     abstract int getLayouId();
 
     @Override
