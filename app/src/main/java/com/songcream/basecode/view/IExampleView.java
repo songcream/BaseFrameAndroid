@@ -1,6 +1,7 @@
-package com.songcream.basecore.view;
+package com.songcream.basecode.view;
 
 import com.songcream.basecore.bean.DataBean;
+import com.songcream.basecore.view.IBaseView;
 
 import java.util.List;
 

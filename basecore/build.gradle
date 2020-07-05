@@ -21,6 +21,10 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -34,7 +38,7 @@ dependencies {
     api 'com.gyf.immersionbar:immersionbar:3.0.0'
     //Retrofit2库
     api 'com.squareup.retrofit2:retrofit:2.9.0'
-    api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    api 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
     //gson解析
     api 'com.trello.rxlifecycle4:rxlifecycle:4.0.0'
     api 'com.trello.rxlifecycle4:rxlifecycle-android:4.0.0'

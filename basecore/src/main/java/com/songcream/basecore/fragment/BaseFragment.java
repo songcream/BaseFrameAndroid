@@ -17,8 +17,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public abstract class BaseFragment<T extends BaseFragmentPresenter> extends RxFragment implements IBaseView {
-    EmptyView emptyView;
-    T mPresenter;
+    public EmptyView emptyView;
+    public T mPresenter;
 
     @Nullable
     @Override

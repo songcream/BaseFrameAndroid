@@ -18,9 +18,9 @@ import java.lang.reflect.InvocationTargetException;
 import androidx.annotation.Nullable;
 
 public abstract class BaseActivity<T extends BaseActivityPresenter> extends RxAppCompatActivity implements IBaseView {
-    ImmersionBar mImmersionBar;
-    EmptyView emptyView;
-    T mPresenter;
+    public ImmersionBar mImmersionBar;
+    public EmptyView emptyView;
+    public T mPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

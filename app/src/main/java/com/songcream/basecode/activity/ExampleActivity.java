@@ -1,12 +1,13 @@
-package com.songcream.basecore.activity;
+package com.songcream.basecode.activity;
 
 import android.os.Bundle;
 
+import com.songcream.basecode.presenter.ExamplePresenter;
+import com.songcream.basecode.view.IExampleView;
 import com.songcream.basecore.R;
+import com.songcream.basecore.activity.BaseActivity;
 import com.songcream.basecore.bean.BaseRequestBean;
 import com.songcream.basecore.bean.DataBean;
-import com.songcream.basecore.presenter.ExamplePresenter;
-import com.songcream.basecore.view.IExampleView;
 
 import java.util.List;
 
@@ -20,7 +21,6 @@ public class ExampleActivity extends BaseActivity<ExamplePresenter> implements I
 
     @Override
     public int getLayouId() {
-        emptyView.hideEmptyView();
         return R.layout.layout_example;
     }
 

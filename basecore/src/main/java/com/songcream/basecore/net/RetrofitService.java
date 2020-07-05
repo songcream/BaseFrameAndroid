@@ -11,6 +11,6 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface RetrofitService {
-    @POST("/getData")
+    @POST("getData")
     public Observable<BaseResponseBean<List<DataBean>>> getData(@Body BaseRequestBean requestBean);
 }

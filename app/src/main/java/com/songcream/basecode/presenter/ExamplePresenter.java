@@ -1,12 +1,13 @@
-package com.songcream.basecore.presenter;
+package com.songcream.basecode.presenter;
 
+import com.songcream.basecode.view.IExampleView;
 import com.songcream.basecore.activity.BaseActivity;
 import com.songcream.basecore.bean.BaseRequestBean;
 import com.songcream.basecore.bean.BaseResponseBean;
 import com.songcream.basecore.bean.DataBean;
 import com.songcream.basecore.net.HttpManager;
 import com.songcream.basecore.net.RxObserver;
-import com.songcream.basecore.view.IExampleView;
+import com.songcream.basecore.presenter.BaseActivityPresenter;
 
 import java.util.List;
 
