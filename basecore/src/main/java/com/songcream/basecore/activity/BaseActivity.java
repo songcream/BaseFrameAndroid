@@ -10,6 +10,7 @@ import com.songcream.basecore.presenter.BaseActivityPresenter;
 import com.songcream.basecore.utils.SystemUtils;
 import com.songcream.basecore.view.IBaseView;
 import com.songcream.simpleviewutil2.view.EmptyView;
+import com.songcream.simpleviewutil2.view.LoadingDialog;
 import com.trello.rxlifecycle4.components.support.RxAppCompatActivity;
 
 import java.lang.reflect.Constructor;
@@ -21,6 +22,7 @@ public abstract class BaseActivity<T extends BaseActivityPresenter> extends RxAp
     public ImmersionBar mImmersionBar;
     public EmptyView emptyView;
     public T mPresenter;
+    public LoadingDialog loadingDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public abstract class BaseActivity<T extends BaseActivityPresenter> extends RxAp
             emptyView=new EmptyView(this);
             emptyView.attachView(findViewById(getEmptyAttachViewId()));
         }
+        loadingDialog=new LoadingDialog(this);
         //利用反射的方法，创建presenter类，那么上层就不用重复关注presenter的创建和入参，只需定义泛型类型就好了
         try {
             Class c=SystemUtils.getSuperClassGenricType(getClass());
@@ -45,6 +48,14 @@ public abstract class BaseActivity<T extends BaseActivityPresenter> extends RxAp
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void showLoadingDialog(){
+        loadingDialog.show();
+    }
+
+    public void dismissLoadingDialog(){
+        loadingDialog.dismiss();
     }
 
     /**

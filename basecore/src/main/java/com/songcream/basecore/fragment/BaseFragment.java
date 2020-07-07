@@ -9,6 +9,7 @@ import com.songcream.basecore.presenter.BaseFragmentPresenter;
 import com.songcream.basecore.utils.SystemUtils;
 import com.songcream.basecore.view.IBaseView;
 import com.songcream.simpleviewutil2.view.EmptyView;
+import com.songcream.simpleviewutil2.view.LoadingDialog;
 import com.trello.rxlifecycle4.components.support.RxFragment;
 
 import java.lang.reflect.Constructor;
@@ -19,6 +20,7 @@ import androidx.annotation.Nullable;
 public abstract class BaseFragment<T extends BaseFragmentPresenter> extends RxFragment implements IBaseView {
     public EmptyView emptyView;
     public T mPresenter;
+    public LoadingDialog loadingDialog;
 
     @Nullable
     @Override
@@ -31,6 +33,7 @@ public abstract class BaseFragment<T extends BaseFragmentPresenter> extends RxFr
             emptyView =new EmptyView(getContext());
             emptyView.attachView(view.findViewById(getEmptyAttachViewId()));
         }
+        loadingDialog=new LoadingDialog(getContext());
         initView(view);
         return view;
     }
@@ -44,6 +47,14 @@ public abstract class BaseFragment<T extends BaseFragmentPresenter> extends RxFr
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void showLoadingDialog(){
+        loadingDialog.show();
+    }
+
+    public void dismissLoadingDialog(){
+        loadingDialog.dismiss();
     }
 
     public abstract void initView(View view);
